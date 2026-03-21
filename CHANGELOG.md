@@ -4,6 +4,19 @@ All notable changes to `ui-craft-pro` are documented here.
 
 ---
 
+## 0.1.3 — 2026-03-22
+
+ClawHub listing polish.
+
+### Changed
+- rewrote the skill summary/description to be sharper, clearer, and more product-facing on ClawHub
+- improved first-glance positioning so users can understand the skill faster from the listing itself
+
+### Notes
+- This release is focused on presentation quality and discoverability on the ClawHub skill page.
+
+---
+
 ## 0.1.2 — 2026-03-22
 
 ClawHub install/documentation upgrade.
