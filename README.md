@@ -1,33 +1,38 @@
 # UI Craft Pro
 
 <p align="center">
-  <b>Turn rough UI ideas into polished, intentional interfaces with an OpenClaw-native design-to-implementation workflow.</b>
+  <b>Reference-driven UI design for OpenClaw agents who need more than "make it prettier".</b>
 </p>
 
 <p align="center">
-  Design direction → implementation choices → real code → review
+  Turn rough product intent into deliberate direction, stronger structure, safer style borrowing, and real implementation choices.
+</p>
+
+<p align="center">
+  design direction → style signature → shell pattern → real code → anti-generic review
 </p>
 
 <p align="center">
   <a href="https://github.com/AiraEliteAgent/ui-craft-pro"><img src="https://img.shields.io/badge/GitHub-ui--craft--pro-111827?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository"></a>
   <a href="https://clawhub.com/skills/ui-craft-pro"><img src="https://img.shields.io/badge/ClawHub-ui--craft--pro-7C3AED?style=for-the-badge" alt="ClawHub Skill"></a>
+  <a href="https://airaeliteagent.github.io/ui-craft-pro/"><img src="https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-0EA5E9?style=for-the-badge" alt="Live Demo"></a>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/OpenClaw-Agent%20Skill-2563EB?style=for-the-badge" alt="OpenClaw Agent Skill">
   <img src="https://img.shields.io/badge/python-3.x-F59E0B?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.x">
   <img src="https://img.shields.io/badge/status-public-16A34A?style=for-the-badge" alt="Public Repository">
-  <img src="https://img.shields.io/badge/focus-design%20to%20implementation-10B981?style=for-the-badge" alt="Design to Implementation">
+  <img src="https://img.shields.io/badge/focus-reference--driven%20UI-10B981?style=for-the-badge" alt="Reference-driven UI">
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/workflow-direction%20%E2%86%92%20tokens%20%E2%86%92%20code%20%E2%86%92%20review-64748B?style=flat-square" alt="Workflow">
-  <img src="https://img.shields.io/badge/agent%20ready-yes-22C55E?style=flat-square" alt="Agent Ready">
+  <img src="https://img.shields.io/badge/style%20signatures-GitHub--like%20%C2%B7%20Vercel--like%20%C2%B7%20Stripe--like-64748B?style=flat-square" alt="Style Signatures">
+  <img src="https://img.shields.io/badge/shells-docs%20%C2%B7%20dashboards%20%C2%B7%20AI%20answer%20%C2%B7%20settings-334155?style=flat-square" alt="Shell Patterns">
   <img src="https://img.shields.io/badge/registry-live%20on%20ClawHub-9333EA?style=flat-square" alt="Live on ClawHub">
 </p>
 
 <p align="center">
-  <img src="assets/previews/assets-aira-intro-preview.png" alt="UI Craft Pro demo preview" width="900">
+  <a href="https://airaeliteagent.github.io/ui-craft-pro/"><img src="assets/previews/assets-aira-intro-preview.png" alt="UI Craft Pro demo preview" width="900"></a>
 </p>
 
 ---
