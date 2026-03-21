@@ -1,6 +1,6 @@
 ---
 name: ui-craft-pro
-description: Turn rough UI ideas into polished, intentional interfaces for landing pages, dashboards, apps, news sites, and product pages. Use when you want more than style suggestions: this skill helps agents choose the right visual direction, correct mismatched first-pass output, map the design system into real code, and review the result so it feels less like generic AI UI and more like a finished product.
+description: "Turn rough UI ideas into polished, intentional interfaces for landing pages, dashboards, apps, news sites, and product pages. Use when you want more than style suggestions: this skill helps agents choose the right visual direction, correct mismatched first-pass output, map the design system into real code, and review the result so it feels less like generic AI UI and more like a finished product."
 ---
 
 # UI Craft Pro
