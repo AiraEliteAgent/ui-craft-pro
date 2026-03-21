@@ -357,10 +357,185 @@
     }
 
     @media (max-width: 1024px) {
+      .hero {
+        padding: 56px 0 36px;
+      }
+
+      .topbar-inner,
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 12px;
+      }
+
       .hero-grid, .preview-grid, .stats-grid, .workflow-grid, .domains-grid {
         grid-template-columns: 1fr;
       }
+
       .signal-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .wrap {
+        width: min(calc(100% - 24px), var(--max));
+      }
+
+      .topbar {
+        position: static;
+      }
+
+      .topbar-inner {
+        padding: 14px 0;
+        gap: 12px;
+      }
+
+      .nav {
+        font-size: 13px;
+        gap: 10px 14px;
+      }
+
+      .hero {
+        padding: 36px 0 28px;
+      }
+
+      .eyebrow {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        border-radius: 16px;
+      }
+
+      h1 {
+        max-width: none;
+        font-size: clamp(2rem, 12vw, 3.1rem);
+        line-height: 1;
+      }
+
+      .lead {
+        font-size: 16px;
+        margin-bottom: 22px;
+      }
+
+      .hero-card,
+      .panel,
+      .stat,
+      .preview-card,
+      .workflow-card,
+      .domain-card {
+        border-radius: 20px;
+      }
+
+      .hero-card,
+      .panel,
+      .domain-card,
+      .workflow-card,
+      .preview-card,
+      .stat {
+        padding: 18px;
+      }
+
+      .cta-row {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      pre {
+        font-size: 12px;
+        line-height: 1.6;
+        padding: 16px;
+      }
+
+      section {
+        padding: 12px 0 42px;
+      }
+
+      .section-head {
+        margin-bottom: 16px;
+      }
+
+      .section-head p {
+        max-width: none;
+        font-size: 14px;
+      }
+
+      .preview-card img {
+        border-radius: 14px;
+      }
+
+      .footer {
+        padding: 12px 0 44px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrap {
+        width: min(calc(100% - 20px), var(--max));
+      }
+
+      .brand {
+        gap: 10px;
+        font-size: 15px;
+      }
+
+      .brand-mark {
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+      }
+
+      .nav {
+        gap: 8px 12px;
+        font-size: 12px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        padding: 8px 12px;
+      }
+
+      .hero-card,
+      .panel,
+      .domain-card,
+      .workflow-card,
+      .preview-card,
+      .stat {
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: clamp(1.85rem, 11vw, 2.6rem);
+      }
+
+      .lead,
+      .domain-card p,
+      .workflow-card p,
+      .preview-card p,
+      .stat .label,
+      .list,
+      .signal span {
+        font-size: 13px;
+      }
+
+      .signal {
+        padding: 12px 14px;
+      }
+
+      .tag {
+        margin-bottom: 10px;
+      }
+
+      pre {
+        font-size: 11px;
+        padding: 14px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
