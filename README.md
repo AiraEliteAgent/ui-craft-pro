@@ -48,6 +48,26 @@ That sounds simple, but in practice this is the difference between:
 
 ---
 
+## Install from ClawHub
+
+Install directly into an OpenClaw workspace:
+
+```bash
+clawhub install ui-craft-pro
+```
+
+Install into a specific workspace:
+
+```bash
+clawhub install ui-craft-pro --workdir /path/to/workspace
+```
+
+ClawHub page:
+- <https://clawhub.com/skills/ui-craft-pro>
+
+GitHub repository:
+- <https://github.com/AiraEliteAgent/ui-craft-pro>
+
 ## OpenClaw quick start
 
 - Read [QUICKSTART.md](QUICKSTART.md)

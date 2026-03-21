@@ -4,6 +4,24 @@ All notable changes to `ui-craft-pro` are documented here.
 
 ---
 
+## 0.1.2 — 2026-03-22
+
+ClawHub install/documentation upgrade.
+
+### Added
+- explicit ClawHub install section in `README.md`
+- direct links to the public GitHub repository and ClawHub listing in repository documentation
+- project home and registry links embedded into the published skill payload
+
+### Changed
+- improved repository onboarding for OpenClaw users who want to install via `clawhub install ui-craft-pro`
+- clarified the difference between GitHub source and ClawHub registry installation
+
+### Notes
+- This release makes the project easier to discover, install, and verify from both GitHub and ClawHub.
+
+---
+
 ## 0.1.1 — 2026-03-22
 
 Repository polish and OpenClaw-focused usability upgrade.
