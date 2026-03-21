@@ -9,20 +9,31 @@ These prompts are useful when working with `ui-craft-pro` inside OpenClaw.
 - Build a modern editorial homepage for a content-heavy product.
 - Turn this rough mockup into a more coherent visual system.
 
+## Style-cloning prompts
+- Make this developer docs page feel more GitHub-like, but keep our own brand.
+- I want this landing page to feel closer to Vercel than generic SaaS.
+- Move this merchant admin UI toward Shopify-like workflow clarity.
+- Make this AI answer page feel Perplexity-like: calm, content-first, and low-noise.
+- Push this command-heavy app toward Raycast/Linear territory without hurting readability.
+- Give this launch page a more Stripe-like or Framer-like premium structure.
+
 ## UI implementation
 - Build this landing page and keep the visual language consistent from hero to CTA.
 - Use the current product category to generate a design direction first, then code the page.
 - Improve the page without changing the product tone.
 - Refine spacing, typography, and CTA hierarchy so this looks intentional.
+- Pick a shell pattern first, then implement the page around it.
 
 ## Correction prompts
 - The current result feels too much like a generic startup template. Correct the direction before coding.
 - The first pass looks too playful. I need calm, premium, and trustworthy.
 - This feels too app-store. Make it more editorial and product-appropriate.
 - Keep the current product but move the style from noisy to restrained.
+- This copied the surface of a premium UI but not the rhythm. Fix that.
 
 ## Review prompts
 - Review this page for style fit, hierarchy, consistency, and UX quality.
 - Check if this UI still matches the original design direction.
 - Point out where the page drifted into generic AI UI.
 - Suggest the smallest changes that would make this page feel much more intentional.
+- Tell me which parts feel copied at surface level only and what structural fixes to make.

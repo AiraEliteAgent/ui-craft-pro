@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI Craft Pro — Reference-Driven UI Design for OpenClaw</title>
+  <meta name="description" content="UI Craft Pro helps OpenClaw agents turn rough product ideas into intentional UI by combining design-system generation, style signatures, shell patterns, and anti-generic review." />
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1728;
+      --surface: rgba(15, 23, 42, 0.72);
+      --surface-strong: rgba(15, 23, 42, 0.92);
+      --border: rgba(148, 163, 184, 0.18);
+      --text: #e5eefb;
+      --muted: #98a7c2;
+      --primary: #8b5cf6;
+      --secondary: #22c55e;
+      --accent: #38bdf8;
+      --warm: #f59e0b;
+      --shadow: 0 20px 60px rgba(2, 6, 23, 0.4);
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.24), transparent 30%),
+        radial-gradient(circle at top right, rgba(56, 189, 248, 0.18), transparent 24%),
+        linear-gradient(180deg, #08101d 0%, #0a1322 36%, #070d18 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 17, 31, 0.65);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.35);
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .hero {
+      padding: 72px 0 44px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(139, 92, 246, 0.24);
+      background: rgba(139, 92, 246, 0.09);
+      color: #d7c7ff;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card, .panel, .stat, .preview-card, .workflow-card, .domain-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-card {
+      padding: 32px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      max-width: 10.5ch;
+    }
+
+    .lead {
+      max-width: 62ch;
+      color: #c7d5ea;
+      font-size: 18px;
+      line-height: 1.65;
+      margin-bottom: 26px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: transform 180ms ease, opacity 180ms ease, border-color 180ms ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #6d28d9);
+      color: white;
+    }
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      color: var(--text);
+    }
+
+    .signal-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .signal {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .signal strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .signal span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 20px;
+    }
+
+    .panel {
+      padding: 24px;
+    }
+
+    .terminal {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      background: rgba(2, 6, 23, 0.72);
+    }
+
+    .terminal-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.35);
+    }
+
+    .dot:nth-child(1) { background: #fb7185; }
+    .dot:nth-child(2) { background: #fbbf24; }
+    .dot:nth-child(3) { background: #4ade80; }
+
+    pre {
+      margin: 0;
+      padding: 18px;
+      overflow: auto;
+      color: #dbe8fb;
+      font-size: 13px;
+      line-height: 1.7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    section {
+      padding: 18px 0 56px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 58ch;
+      line-height: 1.65;
+    }
+
+    .stats-grid, .domains-grid, .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .stat {
+      padding: 22px;
+    }
+
+    .stat .value {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .stat .label {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .domains-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .domain-card, .workflow-card, .preview-card {
+      padding: 22px;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.1);
+      color: #bae6fd;
+      font-size: 12px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(56, 189, 248, 0.15);
+    }
+
+    .domain-card h3, .workflow-card h3, .preview-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .domain-card p, .workflow-card p, .preview-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+      color: #dce6f5;
+      font-size: 14px;
+    }
+
+    .list div { padding-left: 16px; position: relative; }
+    .list div::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--secondary);
+      position: absolute;
+      left: 0;
+      top: 8px;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .preview-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      margin-bottom: 16px;
+    }
+
+    .footer {
+      padding: 20px 0 60px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid, .preview-grid, .stats-grid, .workflow-grid, .domains-grid {
+        grid-template-columns: 1fr;
+      }
+      .signal-list { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <span>UI Craft Pro</span>
+      </div>
+      <nav class="nav">
+        <a href="#why">Why it matters</a>
+        <a href="#domains">Domains</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#showcase">Showcase</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero wrap">
+    <div class="eyebrow">OpenClaw-native · Reference-driven · Anti-generic by design</div>
+    <div class="hero-grid">
+      <div class="hero-card">
+        <h1>Make product UI feel intentional — not AI-generic.</h1>
+        <p class="lead">
+          UI Craft Pro helps OpenClaw agents move from vague design direction to real implementation choices, while borrowing the right logic from strong public systems like GitHub, Vercel, Shopify, Stripe, Raycast, or Perplexity without copying them blindly.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="README.md">Read README</a>
+          <a class="btn btn-secondary" href="SKILL.md">Open SKILL.md</a>
+          <a class="btn btn-secondary" href="https://github.com/AiraEliteAgent/ui-craft-pro">GitHub</a>
+        </div>
+        <div class="signal-list">
+          <div class="signal">
+            <strong>Design-system generation</strong>
+            <span>Product-aware direction, tokens, spacing, hierarchy, and implementation framing.</span>
+          </div>
+          <div class="signal">
+            <strong>Style signatures</strong>
+            <span>Compact “X-like but mine” briefs for GitHub-like, Vercel-like, Stripe-like, Perplexity-like, and more.</span>
+          </div>
+          <div class="signal">
+            <strong>Pattern shells</strong>
+            <span>Reusable structures for dashboards, docs, launch pages, auth flows, settings, and AI answer products.</span>
+          </div>
+          <div class="signal">
+            <strong>Anti-generic review</strong>
+            <span>Find the gradient spam, fake premium, weak hierarchy, and surface-level cloning before shipping.</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-side">
+        <div class="panel">
+          <div class="terminal">
+            <div class="terminal-head">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </div>
+            <pre>python3 skills/ui-craft-pro/scripts/style_signature.py \
+  "developer docs premium monochrome"
+
+python3 skills/ui-craft-pro/scripts/search.py \
+  "ai answer prompt sources" --domain patterns-shells
+
+python3 skills/ui-craft-pro/scripts/search.py \
+  "too many gradients fake premium" --domain anti-generic-ui</pre>
+          </div>
+        </div>
+        <div class="panel">
+          <span class="tag">Positioning</span>
+          <h3>Built for real product work</h3>
+          <p>Not a moodboard dump. Not a random collection of nice colors. This skill is for agents that need to choose a direction, lock the logic, implement coherently, and review with taste.</p>
+          <div class="list">
+            <div>Docs and developer-product surfaces</div>
+            <div>Admin tools and workflow-heavy dashboards</div>
+            <div>AI answer/search experiences</div>
+            <div>Launch pages, onboarding, and settings flows</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Why this now</h2>
+          <p>Most AI UI work fails the same way: it picks a vibe, loses the rhythm, mixes unrelated component families, and ships before checking whether the final result still feels like the product.</p>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat">
+          <span class="value">4</span>
+          <span class="label">taste-building layers: design systems, style signatures, pattern shells, anti-generic review</span>
+        </div>
+        <div class="stat">
+          <span class="value">6</span>
+          <span class="label">reference families covered: developer, enterprise, command, knowledge, creative, universal foundations</span>
+        </div>
+        <div class="stat">
+          <span class="value">10+</span>
+          <span class="label">named style directions such as GitHub-like, Vercel-like, Stripe-like, Raycast-like, and Perplexity-like</span>
+        </div>
+        <div class="stat">
+          <span class="value">1</span>
+          <span class="label">core promise: turn rough intent into a coherent implementation path instead of generic pretty screens</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="domains">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>The new reference layer</h2>
+          <p>The project now teaches stronger visual judgment by studying systems, extracting signatures, choosing shells, and warning against generic failure modes.</p>
+        </div>
+      </div>
+      <div class="domains-grid">
+        <article class="domain-card">
+          <span class="tag">design-systems</span>
+          <h3>Study the right product family first</h3>
+          <p>Compare GitHub/Primer, Vercel/Geist, Polaris, USWDS, Atlassian, Carbon, Ant Design, Fluent, and others by vibe, token DNA, spacing rhythm, and component logic.</p>
+          <div class="list">
+            <div>Choose references that fit the product reality</div>
+            <div>Borrow structure, not brand cosplay</div>
+            <div>Match systems by workflow, trust level, and density</div>
+          </div>
+        </article>
+        <article class="domain-card">
+          <span class="tag">style-signatures</span>
+          <h3>Generate “X-like, but mine” briefs</h3>
+          <p>Turn vague style requests into compact briefs with mood, tokens, spacing, surface rules, component DNA, motion posture, and anti-pattern warnings.</p>
+          <div class="list">
+            <div>GitHub-like, Vercel-like, Stripe-like, Shopify-like</div>
+            <div>Raycast-like, Superhuman-like, Perplexity-like</div>
+            <div>Framer-like, Notion-like, Apple-docs-like, more</div>
+          </div>
+        </article>
+        <article class="domain-card">
+          <span class="tag">patterns-shells</span>
+          <h3>Pick a shell before styling details</h3>
+          <p>Use structural patterns like AI Answer Shell, Developer Docs Shell, Operational Dashboard Shell, Auth Setup Shell, or Native-feel Settings Shell to preserve hierarchy.</p>
+          <div class="list">
+            <div>Reduce random section stacking</div>
+            <div>Make workflow intent visible in layout</div>
+            <div>Get stronger hierarchy with fewer visual tricks</div>
+          </div>
+        </article>
+        <article class="domain-card">
+          <span class="tag">anti-generic-ui</span>
+          <h3>Catch the fake polish early</h3>
+          <p>Spot equal-weight everything, gradient addiction, fake premium, bento noise, card spam, shallow copying, and unreadable glass before they make it into the final screen.</p>
+          <div class="list">
+            <div>Fix hierarchy before adding effects</div>
+            <div>Preserve rhythm, not just color styling</div>
+            <div>Keep components feeling like one product</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="workflow">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Recommended workflow</h2>
+          <p>UI Craft Pro is strongest when it is used as a sequence: understand the product, choose a direction, lock the logic, implement it, and review for drift.</p>
+        </div>
+      </div>
+      <div class="workflow-grid">
+        <article class="workflow-card">
+          <span class="tag">Step 1</span>
+          <h3>Understand the product</h3>
+          <p>Clarify audience, emotional tone, trust posture, density, and what the interface should feel like before touching visuals.</p>
+        </article>
+        <article class="workflow-card">
+          <span class="tag">Step 2</span>
+          <h3>Generate or infer direction</h3>
+          <p>Use the design-system generator or narrower searches to choose a starting direction that actually fits the product.</p>
+        </article>
+        <article class="workflow-card">
+          <span class="tag">Step 3</span>
+          <h3>Extract a style signature</h3>
+          <p>When the user wants a strong known vibe, preserve spacing, type, surfaces, and component logic instead of copying cosmetic tricks.</p>
+        </article>
+        <article class="workflow-card">
+          <span class="tag">Step 4</span>
+          <h3>Choose a shell + review</h3>
+          <p>Lock the structure, implement the UI, then run anti-generic and review passes so the final result still feels intentional.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="showcase">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Showcase demos</h2>
+          <p>These repo previews show the project’s design-to-implementation lens across darker operator UI, soft editorial luxury, and richer content structures.</p>
+        </div>
+      </div>
+      <div class="preview-grid">
+        <article class="preview-card">
+          <img src="assets/previews/preview-aira-command.png" alt="Aira Command preview" />
+          <h3>Aira Command</h3>
+          <p>Darker operator-style UI with stronger hero framing, terminal treatment, dashboard metrics, and premium control-surface energy.</p>
+        </article>
+        <article class="preview-card">
+          <img src="assets/previews/preview-selene-retreat.png" alt="Selene Retreat preview" />
+          <h3>Selene Retreat</h3>
+          <p>A slower, softer editorial luxury direction with calmer rhythm, selective glass treatment, and more image-led composition.</p>
+        </article>
+        <article class="preview-card">
+          <img src="assets/previews/preview-aurora-desk.png" alt="Aurora Desk preview" />
+          <h3>Aurora Desk</h3>
+          <p>A fuller editorial/news product structure with category navigation, newsletter module, story hierarchy, and richer content framing.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer wrap">
+    <p>UI Craft Pro is an OpenClaw-native skill for turning product intent into sharper UI choices, safer reference borrowing, and less generic AI output.</p>
+  </footer>
+</body>
+</html>

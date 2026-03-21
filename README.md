@@ -77,6 +77,9 @@ ClawHub page:
 GitHub repository:
 - <https://github.com/AiraEliteAgent/ui-craft-pro>
 
+Static showcase page:
+- [`showcase.html`](showcase.html)
+
 ## OpenClaw quick start
 
 - Read [QUICKSTART.md](QUICKSTART.md)
@@ -319,8 +322,22 @@ ui-craft-pro/
 ├── QUICKSTART.md
 ├── CHANGELOG.md
 ├── data/
+│   ├── design-systems.csv
+│   ├── style-signatures.csv
+│   ├── patterns-shells.csv
+│   ├── anti-generic-ui.csv
+│   └── ...
 ├── scripts/
+│   ├── search.py
+│   ├── design_system.py
+│   ├── style_signature.py
+│   └── ...
 ├── references/
+│   ├── implementation-patterns.md
+│   ├── style-cloning-playbook.md
+│   ├── design-system-teardown-checklist.md
+│   ├── anti-generic-review.md
+│   └── ...
 ├── examples/
 └── assets/
     └── previews/
@@ -373,3 +390,13 @@ It is a focused adaptation shaped around:
 ## Thanks
 
 Special thanks to the original project for the inspiration and the initial data/search structure that made this adaptation possible.
+e
+- post-build review behavior
+- practical correction of emotionally wrong first-pass output
+
+---
+
+## Thanks
+
+Special thanks to the original project for the inspiration and the initial data/search structure that made this adaptation possible.
+e original project for the inspiration and the initial data/search structure that made this adaptation possible.

@@ -4,6 +4,43 @@ All notable changes to `ui-craft-pro` are documented here.
 
 ---
 
+## 0.1.7 — 2026-03-22
+
+Static showcase page + repository product polish.
+
+### Added
+- `showcase.html` as a lightweight product-facing showcase page for the repository
+- a cleaner visual summary of the skill’s new positioning, domains, workflow, and demo previews
+
+### Changed
+- linked the repository README to the new showcase page
+- extended the repository from markdown-only presentation into a more product-like, browsable entry surface
+
+### Notes
+- This release gives `ui-craft-pro` a better front door for people evaluating the project quickly.
+
+---
+
+## 0.1.6 — 2026-03-22
+
+Reference-driven style cloning + docs/workflow upgrade.
+
+### Added
+- style-cloning guidance to the repository docs and usage flow
+- new examples covering GitHub-like, Vercel-like, Perplexity-like, Shopify-like, and Raycast-like work
+- quick-start guidance for the new `style_signature.py` workflow
+- documentation for the new taste-building domains: `design-systems`, `style-signatures`, `patterns-shells`, and `anti-generic-ui`
+
+### Changed
+- upgraded the README to better reflect the project’s new reference-driven positioning
+- expanded best-use-case coverage to include AI answer/search shells, auth/onboarding, and developer-product surfaces
+- refreshed example prompts and workflows so the project teaches safer style borrowing instead of generic "make it prettier" behavior
+
+### Notes
+- This release is focused on making the repository match the stronger internal capability that was added to the skill itself.
+
+---
+
 ## 0.1.5 — 2026-03-22
 
 README hero and badge polish.
