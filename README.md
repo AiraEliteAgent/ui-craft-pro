@@ -21,6 +21,10 @@
 
 ## Overview
 
+<p align="center">
+  <img src="assets-aira-intro-preview.png" alt="UI Craft Pro demo preview" width="900">
+</p>
+
 `ui-craft-pro` is built for one specific job:
 
 > help an AI agent produce UI that feels intentional, coherent, and product-aware — not just “good enough”.
