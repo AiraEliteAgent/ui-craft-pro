@@ -17,90 +17,107 @@
   <img src="https://img.shields.io/badge/OpenClaw-packaged%20.skill-9333EA?style=flat-square" alt="Packaged Skill">
 </p>
 
-`ui-craft-pro` exists to solve a very specific problem:
+---
 
-> most AI-generated UI can produce something “fine”, but not something that feels truly intentional.
+## Overview
 
-This skill helps an agent go beyond vague style suggestions and move through a stricter path:
+`ui-craft-pro` is built for one specific job:
+
+> help an AI agent produce UI that feels intentional, coherent, and product-aware — not just “good enough”.
+
+A lot of AI-generated UI fails in predictable ways:
+- it looks generic
+- it chooses the wrong emotional tone
+- it mixes visual systems without noticing
+- it stops at style ideas instead of following through into implementation
+- it ships before checking whether the final result still matches the chosen direction
+
+This skill exists to reduce that drift.
+
+It pushes an agent through a stricter path:
 
 **product intent → design direction → implementation choices → real UI → review**
 
----
-
-## Why this skill exists
-
-A lot of AI-built UI falls into the same traps:
-- generic visual language
-- wrong emotional tone for the product
-- weak hierarchy
-- decent ideas, sloppy execution
-- good-looking pieces that do not belong to the same system
-
-`ui-craft-pro` is built to reduce that drift.
-
-It teaches an agent to:
-1. pick a direction that actually fits the product
-2. correct emotionally wrong first-pass results
-3. lock design decisions before coding
-4. implement UI that follows the chosen system
-5. review the result before calling it done
+That sounds simple, but in practice this is the difference between:
+- “some AI-made landing page”
+- and a page that actually feels like it belongs to the product it was made for
 
 ---
 
-## What it contains
+## Philosophy
+
+`ui-craft-pro` is not a gallery of styles.
+It is not just a dataset of palettes and fonts.
+It is not a prompt pack for making screens look prettier.
+
+The real value is in the behavior it teaches:
+
+1. **Understand the product first**
+2. **Choose a direction that fits the product**
+3. **Correct the direction if the first pass is emotionally wrong**
+4. **Lock implementation decisions before coding**
+5. **Build the interface to match the system**
+6. **Review the output before presenting it as done**
+
+That is why the workflow matters more than the raw assets.
+
+---
+
+## What this project contains
 
 ### Core skill
-- **`SKILL.md`** — trigger description and working instructions for the agent
+- **`SKILL.md`** — trigger description and core instructions for the agent
 
 ### Local design knowledge base
-- **`data/`** — styles, colors, typography, landing patterns, UX guidance, chart choices, product mappings, and reasoning support data
+- **`data/`** — bundled design data for styles, colors, typography, landing patterns, UX guidance, chart choices, product mappings, and reasoning support
 
-### Search + generation tools
+### Search and generation tools
 - **`scripts/search.py`** — search interface and design-system generation entry point
 - **`scripts/core.py`** — local search engine over the bundled design data
 - **`scripts/design_system.py`** — design-system generation logic
 
 ### Practical references
-- **`references/implementation-patterns.md`** — how to translate a chosen design direction into code
-- **`references/review-checklist.md`** — how to review built UI for style fit, consistency, and UX quality
-- **`references/product-archetypes.md`** — how to correct wrong first-pass output for products that need calmer, more specific, or more trust-heavy treatment
+- **`references/implementation-patterns.md`** — how to map direction into tokens, components, layout, and stack-aware decisions
+- **`references/review-checklist.md`** — how to run a final UI quality pass
+- **`references/product-archetypes.md`** — how to detect and correct emotionally wrong first-pass outputs
 
 ---
 
 ## What makes this different
 
-This is **not** just a “UI ideas” skill.
+Most “UI skills” can help with:
+- picking a style
+- choosing a palette
+- finding a font pairing
+- suggesting a page structure
 
-The important part is not:
-- “search a style”
-- “pick a font”
-- “suggest a palette”
+That is useful, but incomplete.
 
-The important part is:
-- choosing a direction
-- locking implementation choices
-- building to that direction
-- reviewing whether the final page still matches it
+`ui-craft-pro` focuses on what usually breaks after that:
+- the implementation drifts away from the original design direction
+- the page looks fine in pieces but inconsistent as a whole
+- the first generated direction is technically valid but wrong for the product
+- the final result is never reviewed against the intended vibe
 
-That is why the workflow matters more than the raw dataset.
+This project is built around solving those exact failures.
 
 ---
 
 ## Workflow
 
 ### 1) Understand the product
-Figure out:
+Identify:
 - what the product is
 - who it is for
-- what emotional tone it should give off
-- what should feel obvious, calm, premium, energetic, or trustworthy
+- what emotional tone it should create
+- what kind of trust, energy, clarity, or restraint it needs
 
 ### 2) Generate a first design direction
-Use the local search/design-system tooling to get a strong first pass.
+Use the bundled tools to get an initial design system.
 
 ### 3) Correct drift when needed
-If the first result is technically plausible but emotionally wrong, do not follow it blindly.
-Use narrower domain searches and product archetype correction.
+If the first generated system is plausible but wrong, do not follow it blindly.
+Narrow the search, identify the real archetype, and correct the direction.
 
 ### 4) Lock implementation choices
 Before coding, decide:
@@ -112,10 +129,15 @@ Before coding, decide:
 - anti-patterns to avoid
 
 ### 5) Implement the UI
-Turn the design system into real interface code.
+Translate the chosen design system into real code.
 
 ### 6) Review before shipping
-Check whether the result still feels intentional, coherent, readable, and product-appropriate.
+Check whether the built result is still:
+- coherent
+- readable
+- product-appropriate
+- visually intentional
+- consistent with the original direction
 
 ---
 
@@ -131,7 +153,7 @@ python3 skills/ui-craft-pro/scripts/search.py "gaming landing page bold neon com
 python3 skills/ui-craft-pro/scripts/search.py "fintech dashboard minimal premium trustworthy" --design-system -p "VaultFlow"
 ```
 
-### Search narrower when the first result is wrong
+### Narrow the search when the first result is wrong
 
 ```bash
 python3 skills/ui-craft-pro/scripts/search.py "privacy focused journaling calm minimal" --domain style
@@ -144,15 +166,15 @@ python3 skills/ui-craft-pro/scripts/search.py "privacy app landing minimal premi
 
 ## Best use cases
 
-`ui-craft-pro` is most useful when an agent needs to work on:
+This skill is most useful when an agent needs to work on:
 - landing pages
 - product marketing pages
 - dashboards
 - admin/operator tools
 - app interfaces
-- UI polish/refinement tasks
-- design direction before implementation
-- “make this look less generic” style tasks
+- UI polish or refinement passes
+- product-specific direction setting before implementation
+- tasks where the real brief is “make this feel right, not just functional”
 
 ---
 
@@ -173,18 +195,18 @@ It helps the agent map:
 Use this after coding.
 It helps catch:
 - generic output
-- broken hierarchy
+- weak hierarchy
 - inconsistent component families
-- weak UX details
-- overused effects
+- weak UX detail
+- overused visual effects
 
 ### Product correction
 [`references/product-archetypes.md`](references/product-archetypes.md)
 
 Use this when the first generated direction is technically valid but emotionally wrong.
 Especially useful for:
-- privacy-first products
-- journaling / reflection tools
+- privacy-first tools
+- journaling / reflection products
 - calm / wellness software
 - trust-heavy enterprise tools
 
@@ -192,30 +214,21 @@ Especially useful for:
 
 ## Example lessons from testing
 
-The skill has already been iterated through practical demos.
+This project was not shaped in theory alone.
+It has already been iterated through practical demos and cross-agent testing.
 
 ### Gaming landing page test
-Used to build a high-energy gaming landing page with stronger structure, more deliberate typography, and less “default AI UI” feeling.
+Used to build a high-energy gaming landing page with stronger structure, more deliberate typography, and a clearer visual rhythm than default AI output.
 
 ### Fintech / treasury control test
-Used to build a cleaner premium interface with minimal structure, liquid-glass surfaces, and more focused CTA discipline.
+Used to build a cleaner premium interface with minimal structure, liquid-glass treatment, and stronger CTA discipline.
 
-### Privacy journaling test
-Cross-agent testing showed an important lesson:
+### Privacy journaling cross-agent test
+This test exposed one of the most important lessons in the project:
 - the first generated design system can still drift toward a generic mobile-app pattern
-- but the skill was strong enough to let another agent detect the mismatch, narrow the search, correct the style, and build a calmer paper-like result
+- but the skill was strong enough to let another agent detect that mismatch, narrow the search, correct the direction, and build something calmer and more product-appropriate
 
-That lesson is now built back into the skill.
-
----
-
-## Packaging
-
-To package the skill into a distributable `.skill` file:
-
-```bash
-python3 ~/.npm-global/lib/node_modules/openclaw/skills/skill-creator/scripts/package_skill.py /path/to/ui-craft-pro ./dist
-```
+That lesson is now part of the skill itself.
 
 ---
 
@@ -230,6 +243,26 @@ ui-craft-pro/
 ├── scripts/
 └── references/
 ```
+
+---
+
+## Packaging
+
+To package the skill into a distributable `.skill` file:
+
+```bash
+python3 ~/.npm-global/lib/node_modules/openclaw/skills/skill-creator/scripts/package_skill.py /path/to/ui-craft-pro ./dist
+```
+
+---
+
+## Roadmap direction
+
+Near-term improvements that matter most:
+- stronger product-archetype correction for calm / reflective / trust-heavy products
+- better first-pass design-system matching for less generic output
+- more stack-aware implementation patterns
+- continued iteration from real production tasks instead of theory-only expansion
 
 ---
 
@@ -251,9 +284,10 @@ It is a focused adaptation shaped around:
 - agent workflow
 - design-to-implementation discipline
 - post-build review behavior
+- practical correction of emotionally wrong first-pass output
 
 ---
 
 ## Thanks
 
-Special thanks to the original project for the inspiration and the initial data/search approach that made this adaptation possible.
+Special thanks to the original project for the inspiration and the initial data/search structure that made this adaptation possible.
