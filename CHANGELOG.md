@@ -4,6 +4,21 @@ All notable changes to `ui-craft-pro` are documented here.
 
 ---
 
+## 0.1.8 — 2026-03-22
+
+README hero/positioning upgrade + live demo integration.
+
+### Changed
+- upgraded the README hero to better reflect the project as a reference-driven UI product instead of a generic skill page
+- added a direct GitHub Pages live demo badge and link
+- refreshed the overview, differentiators, quick usage, and best-use-case sections to match the new style-signature / shell / anti-generic workflow
+- expanded the README references section so the stronger guidance layers are visible from the main repository page
+
+### Notes
+- This release is focused on making the repository landing experience feel as deliberate as the project itself.
+
+---
+
 ## 0.1.7 — 2026-03-22
 
 Static showcase page + repository product polish.

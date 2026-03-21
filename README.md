@@ -120,16 +120,20 @@ That is why the workflow matters more than the raw assets.
 - **`scripts/search.py`** — search interface and design-system generation entry point
 - **`scripts/core.py`** — local search engine over the bundled design data
 - **`scripts/design_system.py`** — design-system generation logic
+- **`scripts/style_signature.py`** — compact style-cloning brief generator for “X-like but mine” UI work
 
 ### Practical references
 - **`references/implementation-patterns.md`** — how to map direction into tokens, components, layout, and stack-aware decisions
 - **`references/review-checklist.md`** — how to run a final UI quality pass
 - **`references/product-archetypes.md`** — how to detect and correct emotionally wrong first-pass outputs
 - **`references/project-integration.md`** — how to apply the skill in real OpenClaw projects
+- **`references/style-cloning-playbook.md`** — how to study public design systems and borrow their logic safely
+- **`references/design-system-teardown-checklist.md`** — teardown prompts for extracting the real style DNA from products
+- **`references/anti-generic-review.md`** — how to catch AI-generic UI smells before shipping
 
 ### Examples
 - **`examples/prompts.md`** — prompts that trigger the skill well
-- **`examples/workflows.md`** — practical flows for gaming, fintech, correction, and refinement work
+- **`examples/workflows.md`** — practical flows for gaming, fintech, correction, style cloning, AI answer shells, and refinement work
 
 ---
 
@@ -264,6 +268,21 @@ Especially useful for:
 [`references/project-integration.md`](references/project-integration.md)
 
 Use this when applying the skill inside a real OpenClaw project so the result survives contact with a real codebase instead of staying at the “design note” level.
+
+### Style cloning
+[`references/style-cloning-playbook.md`](references/style-cloning-playbook.md)
+
+Use this when the real request is not just “make it better”, but “make it feel closer to a strong known product/system without cloning it blindly”.
+
+### Design-system teardown
+[`references/design-system-teardown-checklist.md`](references/design-system-teardown-checklist.md)
+
+Use this when studying public design systems, polished product UIs, or strong marketing surfaces to extract the layers that actually matter.
+
+### Anti-generic review
+[`references/anti-generic-review.md`](references/anti-generic-review.md)
+
+Use this when the UI looks acceptable at first glance but still feels like generic AI output.
 
 ---
 
@@ -400,3 +419,6 @@ e
 
 Special thanks to the original project for the inspiration and the initial data/search structure that made this adaptation possible.
 e original project for the inspiration and the initial data/search structure that made this adaptation possible.
+at made this adaptation possible.
+ that made this adaptation possible.
+at made this adaptation possible.
