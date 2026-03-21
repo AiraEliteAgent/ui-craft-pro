@@ -4,6 +4,21 @@ All notable changes to `ui-craft-pro` are documented here.
 
 ---
 
+## 0.1.5 — 2026-03-22
+
+README hero and badge polish.
+
+### Changed
+- upgraded the README hero section to feel more product-grade and less generic
+- changed repository status badge from `private` to `public`
+- added direct GitHub and ClawHub badges at the top for faster discovery
+- refreshed the opening positioning copy to make the project value clearer at first glance
+
+### Notes
+- This release is focused on repository presentation quality, discoverability, and first-impression clarity.
+
+---
+
 ## 0.1.4 — 2026-03-22
 
 ClawHub safety wording polish.

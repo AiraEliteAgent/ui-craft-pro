@@ -1,20 +1,29 @@
 # UI Craft Pro
 
 <p align="center">
-  <b>An OpenClaw-compatible skill for turning UI direction into real implementation.</b>
+  <b>Turn rough UI ideas into polished, intentional interfaces with an OpenClaw-native design-to-implementation workflow.</b>
+</p>
+
+<p align="center">
+  Design direction → implementation choices → real code → review
+</p>
+
+<p align="center">
+  <a href="https://github.com/AiraEliteAgent/ui-craft-pro"><img src="https://img.shields.io/badge/GitHub-ui--craft--pro-111827?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository"></a>
+  <a href="https://clawhub.com/skills/ui-craft-pro"><img src="https://img.shields.io/badge/ClawHub-ui--craft--pro-7C3AED?style=for-the-badge" alt="ClawHub Skill"></a>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/OpenClaw-Agent%20Skill-2563EB?style=for-the-badge" alt="OpenClaw Agent Skill">
   <img src="https://img.shields.io/badge/python-3.x-F59E0B?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.x">
-  <img src="https://img.shields.io/badge/status-private-111827?style=for-the-badge" alt="Private Repo">
+  <img src="https://img.shields.io/badge/status-public-16A34A?style=for-the-badge" alt="Public Repository">
   <img src="https://img.shields.io/badge/focus-design%20to%20implementation-10B981?style=for-the-badge" alt="Design to Implementation">
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/workflow-direction%20%E2%86%92%20tokens%20%E2%86%92%20code%20%E2%86%92%20review-64748B?style=flat-square" alt="Workflow">
   <img src="https://img.shields.io/badge/agent%20ready-yes-22C55E?style=flat-square" alt="Agent Ready">
-  <img src="https://img.shields.io/badge/OpenClaw-packaged%20.skill-9333EA?style=flat-square" alt="Packaged Skill">
+  <img src="https://img.shields.io/badge/registry-live%20on%20ClawHub-9333EA?style=flat-square" alt="Live on ClawHub">
 </p>
 
 <p align="center">
