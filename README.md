@@ -77,7 +77,10 @@ ClawHub page:
 GitHub repository:
 - <https://github.com/AiraEliteAgent/ui-craft-pro>
 
-Static showcase page:
+Live demo:
+- <https://airaeliteagent.github.io/ui-craft-pro/>
+
+Static showcase source:
 - [`showcase.html`](showcase.html)
 
 ## OpenClaw quick start
