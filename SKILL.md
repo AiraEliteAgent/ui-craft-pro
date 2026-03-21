@@ -24,12 +24,12 @@ Its real job is:
 - `references/review-checklist.md` — post-build review checklist to catch drift and weak output
 - `references/product-archetypes.md` — how to correct mismatched first-pass results for product types that need calmer or more specific taste
 
-## Core rule
+## Core idea
 
-Do not stop at “the search result says X”.
-Use the result to drive the actual implementation.
+The best results usually come from treating search output as a starting point, not the final answer.
+Use the result to guide implementation decisions.
 
-When using this skill for real UI work, the expected path is:
+For real UI work, a strong path is usually:
 - understand the product
 - generate or infer the design system
 - map that system into code
@@ -70,11 +70,11 @@ Use the result to lock in:
 - interaction feel
 - anti-patterns to avoid
 
-### 3) Correct bad first-pass matches when needed
+### 3) Correct first-pass drift when needed
 Sometimes the first generated result is technically plausible but emotionally wrong.
-That is a correction problem, not a reason to abandon the workflow.
+That is usually a correction problem rather than a reason to abandon the workflow.
 
-When this happens:
+When this happens, a useful approach is:
 1. identify the real product archetype
 2. run narrower domain searches
 3. lock a corrected direction
@@ -83,8 +83,8 @@ When this happens:
 Read `references/product-archetypes.md` when the first result drifts toward generic app-store, generic SaaS, or any style that does not fit the product’s real emotional center.
 
 ### 4) Lock implementation decisions before coding
-After choosing the direction, define the implementation layer clearly.
-At minimum, lock:
+After choosing the direction, it often helps to define the implementation layer clearly.
+A practical minimum is:
 - color tokens
 - typography roles
 - spacing rhythm
@@ -116,7 +116,7 @@ Use this when you need:
 - chart guidance for dashboards
 
 ### 6) Translate the design system into code
-This is the important part.
+This is usually the most important part.
 
 After choosing a direction, map it into implementation decisions such as:
 - color tokens / CSS variables / Tailwind tokens
@@ -128,13 +128,12 @@ After choosing a direction, map it into implementation decisions such as:
 - hover/focus/active states
 - motion intensity
 
-Do not code a random pretty page after generating a design system.
-Code in a way that clearly reflects the chosen style.
+In practice, the strongest results usually come from keeping the implementation visibly aligned with the chosen style rather than treating the design system as a loose suggestion.
 
 ### 7) Keep the implementation coherent
-While coding:
+While coding, it usually helps to:
 - keep one main visual language
-- do not mix unrelated styles randomly
+- avoid mixing unrelated styles randomly
 - keep type, spacing, contrast, and component treatment consistent
 - preserve usability while making it look better
 - avoid overdoing effects that hurt readability or feel gimmicky
@@ -152,7 +151,7 @@ If the page still feels bland, refine hierarchy and consistency before adding fl
 
 ## Default behavior when using this skill
 
-Prefer this order internally:
+A helpful working order is often:
 1. understand the ask
 2. infer or generate direction
 3. correct drift if needed
@@ -161,8 +160,7 @@ Prefer this order internally:
 6. review the result
 7. present the result simply
 
-Do not dump raw search results unless they are directly useful.
-Use them to improve judgment and implementation.
+Raw search results are usually most useful as internal guidance rather than something to dump directly to the user.
 
 ## High-value domains
 

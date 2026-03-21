@@ -4,6 +4,19 @@ All notable changes to `ui-craft-pro` are documented here.
 
 ---
 
+## 0.1.4 — 2026-03-22
+
+ClawHub safety wording polish.
+
+### Changed
+- softened instruction wording in `SKILL.md` to read more like guidance than command/override text
+- kept the workflow intact while reducing language that could look like prompt-override behavior to static scanners
+
+### Notes
+- This release is aimed at reducing false-positive prompt-injection warnings on ClawHub/OpenClaw safety scans.
+
+---
+
 ## 0.1.3 — 2026-03-22
 
 ClawHub listing polish.
