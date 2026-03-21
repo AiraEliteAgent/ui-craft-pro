@@ -17,13 +17,13 @@
   <img src="https://img.shields.io/badge/OpenClaw-packaged%20.skill-9333EA?style=flat-square" alt="Packaged Skill">
 </p>
 
+<p align="center">
+  <img src="assets/previews/assets-aira-intro-preview.png" alt="UI Craft Pro demo preview" width="900">
+</p>
+
 ---
 
 ## Overview
-
-<p align="center">
-  <img src="assets-aira-intro-preview.png" alt="UI Craft Pro demo preview" width="900">
-</p>
 
 `ui-craft-pro` is built for one specific job:
 
@@ -45,6 +45,15 @@ It pushes an agent through a stricter path:
 That sounds simple, but in practice this is the difference between:
 - “some AI-made landing page”
 - and a page that actually feels like it belongs to the product it was made for
+
+---
+
+## OpenClaw quick start
+
+- Read [QUICKSTART.md](QUICKSTART.md)
+- See [examples/prompts.md](examples/prompts.md)
+- See [examples/workflows.md](examples/workflows.md)
+- Read [references/project-integration.md](references/project-integration.md) for real project use
 
 ---
 
@@ -84,6 +93,11 @@ That is why the workflow matters more than the raw assets.
 - **`references/implementation-patterns.md`** — how to map direction into tokens, components, layout, and stack-aware decisions
 - **`references/review-checklist.md`** — how to run a final UI quality pass
 - **`references/product-archetypes.md`** — how to detect and correct emotionally wrong first-pass outputs
+- **`references/project-integration.md`** — how to apply the skill in real OpenClaw projects
+
+### Examples
+- **`examples/prompts.md`** — prompts that trigger the skill well
+- **`examples/workflows.md`** — practical flows for gaming, fintech, correction, and refinement work
 
 ---
 
@@ -214,6 +228,11 @@ Especially useful for:
 - calm / wellness software
 - trust-heavy enterprise tools
 
+### Project integration
+[`references/project-integration.md`](references/project-integration.md)
+
+Use this when applying the skill inside a real OpenClaw project so the result survives contact with a real codebase instead of staying at the “design note” level.
+
 ---
 
 ## Showcase demos
@@ -223,7 +242,7 @@ Especially useful for:
 A darker, more premium operator-style landing page with a stronger hero frame, product-style terminal treatment, dashboard metrics, and image-backed presentation.
 
 <p align="center">
-  <img src="preview-aira-command.png" alt="Aira Command showcase demo" width="900">
+  <img src="assets/previews/preview-aira-command.png" alt="Aira Command showcase demo" width="900">
 </p>
 
 ### Selene Retreat
@@ -231,7 +250,7 @@ A darker, more premium operator-style landing page with a stronger hero frame, p
 A softer editorial luxury landing page with a slower rhythm, glass surfaces used with restraint, and a more image-led hero section.
 
 <p align="center">
-  <img src="preview-selene-retreat.png" alt="Selene Retreat showcase demo" width="900">
+  <img src="assets/previews/preview-selene-retreat.png" alt="Selene Retreat showcase demo" width="900">
 </p>
 
 ### Aurora Desk
@@ -239,7 +258,7 @@ A softer editorial luxury landing page with a slower rhythm, glass surfaces used
 A fuller editorial/news product demo with homepage structure, category tabs, newsletter module, feature stories, article-page treatment, and real imagery so the repository shows a more complete content site instead of only landing pages.
 
 <p align="center">
-  <img src="preview-aurora-desk.png" alt="Aurora Desk editorial news showcase demo" width="900">
+  <img src="assets/previews/preview-aurora-desk.png" alt="Aurora Desk editorial news showcase demo" width="900">
 </p>
 
 ## Example lessons from testing
@@ -268,10 +287,14 @@ That lesson is now part of the skill itself.
 ui-craft-pro/
 ├── SKILL.md
 ├── README.md
+├── QUICKSTART.md
 ├── CHANGELOG.md
 ├── data/
 ├── scripts/
-└── references/
+├── references/
+├── examples/
+└── assets/
+    └── previews/
 ```
 
 ---
@@ -291,7 +314,7 @@ python3 ~/.npm-global/lib/node_modules/openclaw/skills/skill-creator/scripts/pac
 Near-term improvements that matter most:
 - stronger product-archetype correction for calm / reflective / trust-heavy products
 - better first-pass design-system matching for less generic output
-- more stack-aware implementation patterns
+- stronger OpenClaw-first install and usage guidance
 - continued iteration from real production tasks instead of theory-only expansion
 
 ---

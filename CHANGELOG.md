@@ -4,6 +4,28 @@ All notable changes to `ui-craft-pro` are documented here.
 
 ---
 
+## 0.1.1 — 2026-03-22
+
+Repository polish and OpenClaw-focused usability upgrade.
+
+### Added
+- `QUICKSTART.md` for OpenClaw-first setup and usage
+- `examples/prompts.md` with practical trigger examples
+- `examples/workflows.md` with concrete usage flows
+- `references/project-integration.md` for applying the skill in real projects
+- cleaner preview asset organization under `assets/previews/`
+
+### Changed
+- Reworked README structure to make OpenClaw usage clearer
+- Updated showcase image paths after asset cleanup
+- Refocused repository guidance toward **OpenClaw-only** usage instead of broader multi-platform positioning
+
+### Notes
+- This update improves the repository as a product, not just as a bundle of files.
+- The goal is to make installation, usage, and evaluation easier for real OpenClaw users.
+
+---
+
 ## 0.1.0 — 2026-03-21
 
 Initial private release.
