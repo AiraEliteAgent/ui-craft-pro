@@ -234,6 +234,14 @@ A softer editorial luxury landing page with a slower rhythm, glass surfaces used
   <img src="preview-selene-retreat.png" alt="Selene Retreat showcase demo" width="900">
 </p>
 
+### Aurora Desk
+
+A fuller editorial/news product demo with homepage structure, category tabs, newsletter module, feature stories, article-page treatment, and real imagery so the repository shows a more complete content site instead of only landing pages.
+
+<p align="center">
+  <img src="preview-aurora-desk.png" alt="Aurora Desk editorial news showcase demo" width="900">
+</p>
+
 ## Example lessons from testing
 
 This project was not shaped in theory alone.
