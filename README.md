@@ -216,6 +216,24 @@ Especially useful for:
 
 ---
 
+## Showcase demos
+
+### Aira Command
+
+A darker, more premium operator-style landing page with a stronger hero frame, product-style terminal treatment, dashboard metrics, and image-backed presentation.
+
+<p align="center">
+  <img src="preview-aira-command.png" alt="Aira Command showcase demo" width="900">
+</p>
+
+### Selene Retreat
+
+A softer editorial luxury landing page with a slower rhythm, glass surfaces used with restraint, and a more image-led hero section.
+
+<p align="center">
+  <img src="preview-selene-retreat.png" alt="Selene Retreat showcase demo" width="900">
+</p>
+
 ## Example lessons from testing
 
 This project was not shaped in theory alone.
