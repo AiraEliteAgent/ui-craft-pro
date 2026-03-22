@@ -265,9 +265,32 @@ This skill is most useful when an agent needs to work on:
 - dashboards
 - admin/operator tools
 - app interfaces
+- AI answer/search shells
+- onboarding / auth / setup flows
+- docs and developer-product surfaces
 - UI polish or refinement passes
 - product-specific direction setting before implementation
 - tasks where the real brief is “make this feel right, not just functional”
+
+---
+
+## Outcome examples
+
+### 1) Generic startup landing page → stronger product launch page
+Use the skill when a page technically looks modern but still feels replaceable.
+The goal is to tighten the product story, improve CTA rhythm, and make the page feel tied to a real company or product category.
+
+### 2) Premium dashboard idea → clearer operator/workflow surface
+Use the skill when a dashboard needs more than dark cards and charts.
+The goal is to improve workflow clarity, density, hierarchy, and the feeling that the interface was designed for real work.
+
+### 3) “Make it feel more like X” → safer style borrowing
+Use the skill when the request is really about a strong reference vibe.
+The goal is not to copy the source product visually line-by-line, but to preserve the logic that makes it feel good.
+
+### 4) Good-looking UI → final-pass anti-generic refinement
+Use the skill when the screen is almost there but still smells AI-made.
+The goal is to catch fake premium, weak hierarchy, inconsistent component family behavior, and decorative overkill.
 
 ---
 
@@ -496,6 +519,16 @@ Special thanks to the original project for the inspiration and the initial data/
 e
 - post-build review behavior
 - practical correction of emotionally wrong first-pass output
+
+---
+
+## Thanks
+
+Special thanks to the original project for the inspiration and the initial data/search structure that made this adaptation possible.
+e original project for the inspiration and the initial data/search structure that made this adaptation possible.
+at made this adaptation possible.
+ that made this adaptation possible.
+at made this adaptation possible.
 
 ---
 

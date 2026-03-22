@@ -4,6 +4,24 @@ All notable changes to `ui-craft-pro` are documented here.
 
 ---
 
+## 0.2.0 — 2026-03-22
+
+README productization upgrade.
+
+### Added
+- proof / trust-signal section near the top of the README
+- before-vs-after framing to make the project value easier to understand quickly
+- outcome examples that explain where the skill creates concrete improvement instead of abstract polish
+
+### Changed
+- upgraded the README from structured documentation into a more persuasive product page with clearer practical value
+- expanded best-use-case framing to include AI answer/search shells, onboarding/auth flows, and developer-product surfaces
+
+### Notes
+- This release is focused on making the repository feel more convincing to evaluators while still staying useful as documentation.
+
+---
+
 ## 0.1.9 — 2026-03-22
 
 README documentation architecture upgrade.
