@@ -544,19 +544,25 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
   <div class="topbar">
     <div class="wrap topbar-inner">
-      <div class="brand">
+      <a class="brand" href="#top" aria-label="UI Craft Pro home">
         <div class="brand-mark"></div>
         <span>UI Craft Pro</span>
+      </a>
+      <div class="nav-shell">
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+          <span></span>
+        </button>
+        <nav class="nav" id="site-nav">
+          <a href="#why">Why</a>
+          <a href="#domains">Domains</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#showcase">Showcase</a>
+          <a class="nav-cta" href="https://github.com/AiraEliteAgent/ui-craft-pro">View on GitHub</a>
+        </nav>
       </div>
-      <nav class="nav">
-        <a href="#why">Why it matters</a>
-        <a href="#domains">Domains</a>
-        <a href="#workflow">Workflow</a>
-        <a href="#showcase">Showcase</a>
-      </nav>
     </div>
   </div>
 
@@ -771,10 +777,10 @@ python3 skills/ui-craft-pro/scripts/search.py \
       <div class="footer-grid">
         <div class="footer-col">
           <h3>UI Craft Pro</h3>
-          <p>An OpenClaw-native design system and refinement skill for turning rough product intent into more intentional UI, safer style borrowing, and cleaner implementation choices.</p>
+          <p>Calm premium docs/demo surface for a reference-driven OpenClaw skill focused on stronger product fit, cleaner structure, and safer style borrowing.</p>
         </div>
         <div class="footer-col">
-          <h4>Explore</h4>
+          <h4>Navigate</h4>
           <div class="footer-links">
             <a href="#why">Why it matters</a>
             <a href="#domains">Domains</a>
@@ -791,18 +797,9 @@ python3 skills/ui-craft-pro/scripts/search.py \
             <a href="SKILL.md">SKILL.md</a>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Use it for</h4>
-          <div class="footer-links">
-            <a href="#showcase">Landing pages</a>
-            <a href="#showcase">Dashboard surfaces</a>
-            <a href="#workflow">AI answer/search UI</a>
-            <a href="#domains">Docs and design systems</a>
-          </div>
-        </div>
       </div>
       <div class="footer-bottom">
-        <span>Built for OpenClaw agents who need more than generic AI UI.</span>
+        <span>Calm premium docs/demo surface for a reference-driven OpenClaw skill.</span>
         <a href="#top">Back to top ↑</a>
       </div>
     </div>
@@ -835,5 +832,8 @@ python3 skills/ui-craft-pro/scripts/search.py \
       if (window.innerWidth > 768) closeMenu();
     });
   </script>
+</body>
+</html>
+
 </body>
 </html>
