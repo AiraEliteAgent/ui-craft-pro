@@ -4,6 +4,22 @@ All notable changes to `ui-craft-pro` are documented here.
 
 ---
 
+## 0.2.2 — 2026-03-22
+
+README visual comparison pass.
+
+### Added
+- visual-comparison section that explains the kind of outputs the skill helps create
+- preview-linked contrast framing for operator, editorial-luxury, and content-product directions
+
+### Changed
+- improved README scannability by adding a more visual bridge between feature claims and showcase examples
+
+### Notes
+- This release is focused on helping people understand the skill faster with their eyes before reading deep into the docs.
+
+---
+
 ## 0.2.1 — 2026-03-22
 
 README maturity pass.

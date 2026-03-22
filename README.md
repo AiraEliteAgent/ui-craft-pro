@@ -294,6 +294,33 @@ The goal is to catch fake premium, weak hierarchy, inconsistent component family
 
 ---
 
+## Visual comparison
+
+### What kind of outputs this helps create
+
+| UI direction | What it demonstrates | Preview |
+|-------------|----------------------|---------|
+| **Operator / dashboard-heavy premium** | Stronger hero framing, darker control surfaces, better hierarchy for metrics and product framing | [Aira Command](#aira-command) |
+| **Editorial luxury / calm premium** | Slower pacing, softer surfaces, more image-led storytelling, more restrained styling | [Selene Retreat](#selene-retreat) |
+| **Content / editorial product structure** | Category navigation, newsletter modules, richer homepage/article hierarchy, less landing-page sameness | [Aurora Desk](#aurora-desk) |
+
+### Reading the contrast
+
+The point is not that every output should look like one of these demos.
+The point is that `ui-craft-pro` helps an agent move away from:
+- one-note generic startup landing pages
+- random section stacking
+- dark-premium-by-default shortcuts
+- style borrowing without structural logic
+
+and toward:
+- product-fit direction
+- clearer shell choice
+- more coherent component families
+- visual treatment that matches the actual product category
+
+---
+
 ## Common mistakes this helps prevent
 
 - using black backgrounds, blur, and gradients as a shortcut for “premium”
