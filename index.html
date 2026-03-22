@@ -517,7 +517,7 @@
       .stat,
       .domain-card,
       .workflow-card,
-      .preview-card { padding: 18px; }
+      .preview-card { padding: 16px; }
 
       .cta-row { flex-direction: column; }
       .btn { width: 100%; }
@@ -813,6 +813,26 @@ python3 skills/ui-craft-pro/scripts/search.py \
 
     navLinks.forEach((link) => {
       link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) closeMenu();
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMenu();
+    });
+  </script>
+</body>
+</html>
+/script>
+</body>
+</html>
+</script>
+</body>
+</html>
+/script>
+</body>
+</html>
+> {
         if (window.innerWidth <= 768) closeMenu();
       });
     });
