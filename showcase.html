@@ -7,46 +7,46 @@
   <meta name="description" content="UI Craft Pro helps OpenClaw agents turn rough product ideas into intentional UI by combining design-system generation, style signatures, shell patterns, and anti-generic review." />
   <style>
     :root {
-      --bg: #07111f;
-      --bg-soft: #0d1728;
-      --surface: rgba(15, 23, 42, 0.72);
-      --surface-strong: rgba(15, 23, 42, 0.92);
-      --border: rgba(148, 163, 184, 0.18);
-      --text: #e5eefb;
-      --muted: #98a7c2;
+      --bg: #0a0f1a;
+      --bg-2: #0f1726;
+      --surface: rgba(15, 23, 38, 0.78);
+      --surface-2: rgba(11, 17, 29, 0.9);
+      --border: rgba(148, 163, 184, 0.14);
+      --border-strong: rgba(148, 163, 184, 0.22);
+      --text: #e8eef9;
+      --muted: #94a3b8;
       --primary: #8b5cf6;
-      --secondary: #22c55e;
       --accent: #38bdf8;
-      --warm: #f59e0b;
-      --shadow: 0 20px 60px rgba(2, 6, 23, 0.4);
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --radius-sm: 14px;
-      --max: 1160px;
+      --success: #22c55e;
+      --shadow: 0 22px 60px rgba(2, 6, 23, 0.34);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --max: 1120px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
+      min-height: 100vh;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(139, 92, 246, 0.24), transparent 30%),
-        radial-gradient(circle at top right, rgba(56, 189, 248, 0.18), transparent 24%),
-        linear-gradient(180deg, #08101d 0%, #0a1322 36%, #070d18 100%);
-      min-height: 100vh;
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.12), transparent 26%),
+        linear-gradient(180deg, #09111d 0%, #0b1321 40%, #0a101a 100%);
     }
 
     a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
     .wrap { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 50;
+      background: rgba(9, 17, 29, 0.82);
       backdrop-filter: blur(14px);
-      background: rgba(7, 17, 31, 0.65);
       border-bottom: 1px solid rgba(148, 163, 184, 0.08);
     }
 
@@ -55,11 +55,11 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 16px 0;
+      min-height: 72px;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 12px;
       font-weight: 700;
@@ -71,20 +71,88 @@
       height: 36px;
       border-radius: 12px;
       background: linear-gradient(135deg, var(--primary), var(--accent));
-      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.35);
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.28);
+      flex: 0 0 auto;
+    }
+
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: auto;
+      position: relative;
     }
 
     .nav {
       display: flex;
-      gap: 18px;
+      align-items: center;
+      gap: 6px;
       color: var(--muted);
       font-size: 14px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
     }
 
+    .nav a {
+      padding: 8px 10px;
+      border-radius: 10px;
+      transition: color 180ms ease, background 180ms ease;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      background: rgba(148, 163, 184, 0.08);
+    }
+
+    .nav-cta {
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border-strong);
+      background: rgba(15, 23, 38, 0.56);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border-radius: 14px;
+      border: 1px solid var(--border-strong);
+      background: rgba(15, 23, 38, 0.8);
+      color: var(--text);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .menu-toggle span,
+    .menu-toggle::before,
+    .menu-toggle::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+      transform: translateX(-50%);
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .menu-toggle span { top: 21px; }
+    .menu-toggle::before { top: 15px; }
+    .menu-toggle::after { top: 27px; }
+
+    body.menu-open .menu-toggle span { opacity: 0; }
+    body.menu-open .menu-toggle::before { transform: translateX(-50%) rotate(45deg) translateY(4px); }
+    body.menu-open .menu-toggle::after { transform: translateX(-50%) rotate(-45deg) translateY(-4px); }
+
     .hero {
-      padding: 72px 0 44px;
+      padding: 72px 0 46px;
     }
 
     .eyebrow {
@@ -93,77 +161,76 @@
       gap: 10px;
       padding: 8px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(139, 92, 246, 0.24);
+      border: 1px solid rgba(139, 92, 246, 0.22);
       background: rgba(139, 92, 246, 0.09);
-      color: #d7c7ff;
+      color: #d8c8ff;
       font-size: 13px;
       margin-bottom: 20px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 24px;
       align-items: stretch;
     }
 
-    .hero-card, .panel, .stat, .preview-card, .workflow-card, .domain-card {
+    .card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(10px);
     }
 
-    .hero-card {
-      padding: 32px;
-    }
+    .hero-card { padding: 32px; }
+    .panel, .stat, .domain-card, .workflow-card, .preview-card { padding: 22px; }
 
     h1 {
       margin: 0 0 14px;
-      font-size: clamp(2.4rem, 5vw, 4.8rem);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
       max-width: 10.5ch;
+      font-size: clamp(2.45rem, 5vw, 4.7rem);
+      line-height: 0.95;
+      letter-spacing: -0.045em;
     }
 
     .lead {
-      max-width: 62ch;
-      color: #c7d5ea;
+      margin: 0 0 24px;
+      max-width: 60ch;
+      color: #cad5e5;
       font-size: 18px;
       line-height: 1.65;
-      margin-bottom: 26px;
     }
 
     .cta-row {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
     }
 
     .btn {
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 12px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      min-height: 46px;
-      padding: 0 18px;
-      border-radius: 14px;
       font-weight: 600;
-      transition: transform 180ms ease, opacity 180ms ease, border-color 180ms ease;
-      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
     }
 
     .btn:hover { transform: translateY(-1px); }
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), #6d28d9);
       color: white;
+      background: linear-gradient(135deg, var(--primary), #6d28d9);
+      border: 1px solid transparent;
     }
+
     .btn-secondary {
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(148, 163, 184, 0.18);
       color: var(--text);
+      background: rgba(15, 23, 38, 0.52);
+      border: 1px solid var(--border-strong);
     }
 
     .signal-list {
@@ -175,8 +242,8 @@
     .signal {
       padding: 14px 16px;
       border-radius: 16px;
-      background: rgba(15, 23, 42, 0.5);
-      border: 1px solid rgba(148, 163, 184, 0.12);
+      background: rgba(15, 23, 38, 0.48);
+      border: 1px solid rgba(148, 163, 184, 0.1);
     }
 
     .signal strong {
@@ -188,23 +255,19 @@
     .signal span {
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .hero-side {
       display: grid;
-      gap: 20px;
-    }
-
-    .panel {
-      padding: 24px;
+      gap: 18px;
     }
 
     .terminal {
-      border-radius: 18px;
       overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.16);
-      background: rgba(2, 6, 23, 0.72);
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      background: rgba(5, 9, 18, 0.82);
     }
 
     .terminal-head {
@@ -212,14 +275,13 @@
       align-items: center;
       gap: 8px;
       padding: 12px 14px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
     }
 
     .dot {
       width: 10px;
       height: 10px;
       border-radius: 999px;
-      background: rgba(148, 163, 184, 0.35);
     }
 
     .dot:nth-child(1) { background: #fb7185; }
@@ -228,17 +290,15 @@
 
     pre {
       margin: 0;
-      padding: 18px;
       overflow: auto;
-      color: #dbe8fb;
+      padding: 18px;
+      color: #dce7f7;
       font-size: 13px;
       line-height: 1.7;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
 
-    section {
-      padding: 18px 0 56px;
-    }
+    section { padding: 18px 0 56px; }
 
     .section-head {
       display: flex;
@@ -250,25 +310,33 @@
 
     .section-head h2 {
       margin: 0;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-size: clamp(1.65rem, 3vw, 2.35rem);
       letter-spacing: -0.03em;
     }
 
     .section-head p {
       margin: 0;
-      color: var(--muted);
       max-width: 58ch;
+      color: var(--muted);
       line-height: 1.65;
     }
 
-    .stats-grid, .domains-grid, .workflow-grid {
+    .stats-grid, .workflow-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 16px;
     }
 
-    .stat {
-      padding: 22px;
+    .domains-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
 
     .stat .value {
@@ -279,130 +347,156 @@
       letter-spacing: -0.03em;
     }
 
-    .stat .label {
+    .stat .label,
+    .domain-card p,
+    .workflow-card p,
+    .preview-card p,
+    .list,
+    .footer-col p,
+    .footer-links a {
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .domains-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .domain-card, .workflow-card, .preview-card {
-      padding: 22px;
+      line-height: 1.65;
     }
 
     .tag {
       display: inline-flex;
       padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(56, 189, 248, 0.1);
-      color: #bae6fd;
+      background: rgba(56, 189, 248, 0.09);
+      color: #bfe8ff;
       font-size: 12px;
-      margin-bottom: 14px;
       border: 1px solid rgba(56, 189, 248, 0.15);
+      margin-bottom: 14px;
     }
 
-    .domain-card h3, .workflow-card h3, .preview-card h3 {
+    .domain-card h3,
+    .workflow-card h3,
+    .preview-card h3 {
       margin: 0 0 10px;
-      font-size: 1.1rem;
-    }
-
-    .domain-card p, .workflow-card p, .preview-card p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px;
+      font-size: 1.08rem;
     }
 
     .list {
       display: grid;
       gap: 10px;
       color: #dce6f5;
-      font-size: 14px;
     }
 
-    .list div { padding-left: 16px; position: relative; }
+    .list div {
+      position: relative;
+      padding-left: 16px;
+    }
+
     .list div::before {
       content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--secondary);
       position: absolute;
       left: 0;
       top: 8px;
-    }
-
-    .preview-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--success);
     }
 
     .preview-card img {
-      width: 100%;
-      height: auto;
       border-radius: 16px;
-      display: block;
       border: 1px solid rgba(148, 163, 184, 0.14);
       margin-bottom: 16px;
     }
 
     .footer {
-      padding: 20px 0 60px;
+      padding: 20px 0 56px;
+      border-top: 1px solid rgba(148, 163, 184, 0.08);
       color: var(--muted);
-      font-size: 14px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr 0.9fr;
+      gap: 18px;
+      padding-top: 28px;
+    }
+
+    .footer-col h3,
+    .footer-col h4 {
+      margin: 0 0 12px;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-bottom {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(148, 163, 184, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 13px;
     }
 
     @media (max-width: 1024px) {
-      .hero {
-        padding: 56px 0 36px;
+      .hero-grid,
+      .stats-grid,
+      .domains-grid,
+      .workflow-grid,
+      .preview-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
 
-      .topbar-inner,
       .section-head {
         align-items: flex-start;
         flex-direction: column;
-      }
-
-      .nav {
-        width: 100%;
-        justify-content: flex-start;
-        gap: 12px;
-      }
-
-      .hero-grid, .preview-grid, .stats-grid, .workflow-grid, .domains-grid {
-        grid-template-columns: 1fr;
       }
 
       .signal-list { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
-      .wrap {
-        width: min(calc(100% - 24px), var(--max));
-      }
-
-      .topbar {
-        position: static;
-      }
-
-      .topbar-inner {
-        padding: 14px 0;
-        gap: 12px;
-      }
+      .wrap { width: min(calc(100% - 24px), var(--max)); }
+      .topbar-inner { min-height: 68px; }
+      .menu-toggle { display: inline-flex; }
 
       .nav {
-        font-size: 13px;
-        gap: 10px 14px;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 14px;
+        border-radius: 18px;
+        border: 1px solid var(--border-strong);
+        background: rgba(10, 19, 34, 0.96);
+        box-shadow: var(--shadow);
       }
 
-      .hero {
-        padding: 36px 0 28px;
+      body.menu-open .nav { display: flex; }
+
+      .nav a,
+      .nav-cta {
+        width: 100%;
+        min-height: 44px;
+        justify-content: flex-start;
+        padding: 0 14px;
+        background: rgba(15, 23, 38, 0.5);
+        border: 1px solid rgba(148, 163, 184, 0.08);
+        border-radius: 12px;
       }
 
+      .hero { padding: 38px 0 28px; }
       .eyebrow {
         width: 100%;
         justify-content: center;
@@ -412,130 +506,53 @@
 
       h1 {
         max-width: none;
-        font-size: clamp(2rem, 12vw, 3.1rem);
+        font-size: clamp(2rem, 12vw, 3.05rem);
         line-height: 1;
       }
 
-      .lead {
-        font-size: 16px;
-        margin-bottom: 22px;
-      }
-
+      .lead { font-size: 16px; }
       .hero-card,
       .panel,
       .stat,
-      .preview-card,
-      .workflow-card,
-      .domain-card {
-        border-radius: 20px;
-      }
-
-      .hero-card,
-      .panel,
       .domain-card,
       .workflow-card,
-      .preview-card,
-      .stat {
-        padding: 18px;
-      }
+      .preview-card { padding: 18px; }
 
-      .cta-row {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      pre {
-        font-size: 12px;
-        line-height: 1.6;
-        padding: 16px;
-      }
-
-      section {
-        padding: 12px 0 42px;
-      }
-
-      .section-head {
-        margin-bottom: 16px;
-      }
-
-      .section-head p {
-        max-width: none;
-        font-size: 14px;
-      }
-
-      .preview-card img {
-        border-radius: 14px;
-      }
-
-      .footer {
-        padding: 12px 0 44px;
-      }
+      .cta-row { flex-direction: column; }
+      .btn { width: 100%; }
+      section { padding: 12px 0 42px; }
+      pre { font-size: 12px; line-height: 1.6; padding: 16px; }
     }
 
     @media (max-width: 480px) {
-      .wrap {
-        width: min(calc(100% - 20px), var(--max));
-      }
-
-      .brand {
-        gap: 10px;
-        font-size: 15px;
-      }
-
+      .wrap { width: min(calc(100% - 20px), var(--max)); }
+      .brand { gap: 10px; font-size: 15px; }
       .brand-mark {
         width: 32px;
         height: 32px;
         border-radius: 10px;
       }
 
-      .nav {
-        gap: 8px 12px;
-        font-size: 12px;
-      }
-
-      .eyebrow {
-        font-size: 12px;
-        padding: 8px 12px;
-      }
-
       .hero-card,
       .panel,
+      .stat,
       .domain-card,
       .workflow-card,
-      .preview-card,
-      .stat {
-        padding: 16px;
-      }
+      .preview-card { padding: 16px; }
 
-      h1 {
-        font-size: clamp(1.85rem, 11vw, 2.6rem);
-      }
-
+      h1 { font-size: clamp(1.85rem, 11vw, 2.55rem); }
       .lead,
+      .section-head p,
+      .stat .label,
       .domain-card p,
       .workflow-card p,
       .preview-card p,
-      .stat .label,
       .list,
-      .signal span {
-        font-size: 13px;
-      }
+      .signal span,
+      .footer-col p,
+      .footer-links a { font-size: 13px; }
 
-      .signal {
-        padding: 12px 14px;
-      }
-
-      .tag {
-        margin-bottom: 10px;
-      }
-
-      pre {
-        font-size: 11px;
-        padding: 14px;
-      }
+      pre { font-size: 11px; padding: 14px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -569,7 +586,7 @@
   <header class="hero wrap">
     <div class="eyebrow">OpenClaw-native · Reference-driven · Anti-generic by design</div>
     <div class="hero-grid">
-      <div class="hero-card">
+      <div class="card hero-card">
         <h1>Make product UI feel intentional — not AI-generic.</h1>
         <p class="lead">
           UI Craft Pro helps OpenClaw agents move from vague design direction to real implementation choices, while borrowing the right logic from strong public systems like GitHub, Vercel, Shopify, Stripe, Raycast, or Perplexity without copying them blindly.
@@ -577,7 +594,6 @@
         <div class="cta-row">
           <a class="btn btn-primary" href="README.md">Read README</a>
           <a class="btn btn-secondary" href="SKILL.md">Open SKILL.md</a>
-          <a class="btn btn-secondary" href="https://github.com/AiraEliteAgent/ui-craft-pro">GitHub</a>
         </div>
         <div class="signal-list">
           <div class="signal">
@@ -599,7 +615,7 @@
         </div>
       </div>
       <div class="hero-side">
-        <div class="panel">
+        <div class="card panel">
           <div class="terminal">
             <div class="terminal-head">
               <span class="dot"></span><span class="dot"></span><span class="dot"></span>
@@ -614,10 +630,10 @@ python3 skills/ui-craft-pro/scripts/search.py \
   "too many gradients fake premium" --domain anti-generic-ui</pre>
           </div>
         </div>
-        <div class="panel">
+        <div class="card panel">
           <span class="tag">Positioning</span>
           <h3>Built for real product work</h3>
-          <p>Not a moodboard dump. Not a random collection of nice colors. This skill is for agents that need to choose a direction, lock the logic, implement coherently, and review with taste.</p>
+          <p class="lead" style="font-size:14px;margin:0 0 14px;max-width:none;">Not a moodboard dump. Not a random collection of nice colors. This skill is for agents that need to choose a direction, lock the logic, implement coherently, and review with taste.</p>
           <div class="list">
             <div>Docs and developer-product surfaces</div>
             <div>Admin tools and workflow-heavy dashboards</div>
@@ -638,22 +654,10 @@ python3 skills/ui-craft-pro/scripts/search.py \
         </div>
       </div>
       <div class="stats-grid">
-        <div class="stat">
-          <span class="value">4</span>
-          <span class="label">taste-building layers: design systems, style signatures, pattern shells, anti-generic review</span>
-        </div>
-        <div class="stat">
-          <span class="value">6</span>
-          <span class="label">reference families covered: developer, enterprise, command, knowledge, creative, universal foundations</span>
-        </div>
-        <div class="stat">
-          <span class="value">10+</span>
-          <span class="label">named style directions such as GitHub-like, Vercel-like, Stripe-like, Raycast-like, and Perplexity-like</span>
-        </div>
-        <div class="stat">
-          <span class="value">1</span>
-          <span class="label">core promise: turn rough intent into a coherent implementation path instead of generic pretty screens</span>
-        </div>
+        <div class="card stat"><span class="value">4</span><span class="label">taste-building layers: design systems, style signatures, pattern shells, anti-generic review</span></div>
+        <div class="card stat"><span class="value">6</span><span class="label">reference families covered: developer, enterprise, command, knowledge, creative, universal foundations</span></div>
+        <div class="card stat"><span class="value">10+</span><span class="label">named style directions such as GitHub-like, Vercel-like, Stripe-like, Raycast-like, and Perplexity-like</span></div>
+        <div class="card stat"><span class="value">1</span><span class="label">core promise: turn rough intent into a coherent implementation path instead of generic pretty screens</span></div>
       </div>
     </div>
   </section>
@@ -667,7 +671,7 @@ python3 skills/ui-craft-pro/scripts/search.py \
         </div>
       </div>
       <div class="domains-grid">
-        <article class="domain-card">
+        <article class="card domain-card">
           <span class="tag">design-systems</span>
           <h3>Study the right product family first</h3>
           <p>Compare GitHub/Primer, Vercel/Geist, Polaris, USWDS, Atlassian, Carbon, Ant Design, Fluent, and others by vibe, token DNA, spacing rhythm, and component logic.</p>
@@ -677,7 +681,7 @@ python3 skills/ui-craft-pro/scripts/search.py \
             <div>Match systems by workflow, trust level, and density</div>
           </div>
         </article>
-        <article class="domain-card">
+        <article class="card domain-card">
           <span class="tag">style-signatures</span>
           <h3>Generate “X-like, but mine” briefs</h3>
           <p>Turn vague style requests into compact briefs with mood, tokens, spacing, surface rules, component DNA, motion posture, and anti-pattern warnings.</p>
@@ -687,7 +691,7 @@ python3 skills/ui-craft-pro/scripts/search.py \
             <div>Framer-like, Notion-like, Apple-docs-like, more</div>
           </div>
         </article>
-        <article class="domain-card">
+        <article class="card domain-card">
           <span class="tag">patterns-shells</span>
           <h3>Pick a shell before styling details</h3>
           <p>Use structural patterns like AI Answer Shell, Developer Docs Shell, Operational Dashboard Shell, Auth Setup Shell, or Native-feel Settings Shell to preserve hierarchy.</p>
@@ -697,7 +701,7 @@ python3 skills/ui-craft-pro/scripts/search.py \
             <div>Get stronger hierarchy with fewer visual tricks</div>
           </div>
         </article>
-        <article class="domain-card">
+        <article class="card domain-card">
           <span class="tag">anti-generic-ui</span>
           <h3>Catch the fake polish early</h3>
           <p>Spot equal-weight everything, gradient addiction, fake premium, bento noise, card spam, shallow copying, and unreadable glass before they make it into the final screen.</p>
@@ -720,26 +724,10 @@ python3 skills/ui-craft-pro/scripts/search.py \
         </div>
       </div>
       <div class="workflow-grid">
-        <article class="workflow-card">
-          <span class="tag">Step 1</span>
-          <h3>Understand the product</h3>
-          <p>Clarify audience, emotional tone, trust posture, density, and what the interface should feel like before touching visuals.</p>
-        </article>
-        <article class="workflow-card">
-          <span class="tag">Step 2</span>
-          <h3>Generate or infer direction</h3>
-          <p>Use the design-system generator or narrower searches to choose a starting direction that actually fits the product.</p>
-        </article>
-        <article class="workflow-card">
-          <span class="tag">Step 3</span>
-          <h3>Extract a style signature</h3>
-          <p>When the user wants a strong known vibe, preserve spacing, type, surfaces, and component logic instead of copying cosmetic tricks.</p>
-        </article>
-        <article class="workflow-card">
-          <span class="tag">Step 4</span>
-          <h3>Choose a shell + review</h3>
-          <p>Lock the structure, implement the UI, then run anti-generic and review passes so the final result still feels intentional.</p>
-        </article>
+        <article class="card workflow-card"><span class="tag">Step 1</span><h3>Understand the product</h3><p>Clarify audience, emotional tone, trust posture, density, and what the interface should feel like before touching visuals.</p></article>
+        <article class="card workflow-card"><span class="tag">Step 2</span><h3>Generate or infer direction</h3><p>Use the design-system generator or narrower searches to choose a starting direction that actually fits the product.</p></article>
+        <article class="card workflow-card"><span class="tag">Step 3</span><h3>Extract a style signature</h3><p>When the user wants a strong known vibe, preserve spacing, type, surfaces, and component logic instead of copying cosmetic tricks.</p></article>
+        <article class="card workflow-card"><span class="tag">Step 4</span><h3>Choose a shell + review</h3><p>Lock the structure, implement the UI, then run anti-generic and review passes so the final result still feels intentional.</p></article>
       </div>
     </div>
   </section>
@@ -753,17 +741,17 @@ python3 skills/ui-craft-pro/scripts/search.py \
         </div>
       </div>
       <div class="preview-grid">
-        <article class="preview-card">
+        <article class="card preview-card">
           <img src="assets/previews/preview-aira-command.png" alt="Aira Command preview" />
           <h3>Aira Command</h3>
           <p>Darker operator-style UI with stronger hero framing, terminal treatment, dashboard metrics, and premium control-surface energy.</p>
         </article>
-        <article class="preview-card">
+        <article class="card preview-card">
           <img src="assets/previews/preview-selene-retreat.png" alt="Selene Retreat preview" />
           <h3>Selene Retreat</h3>
           <p>A slower, softer editorial luxury direction with calmer rhythm, selective glass treatment, and more image-led composition.</p>
         </article>
-        <article class="preview-card">
+        <article class="card preview-card">
           <img src="assets/previews/preview-aurora-desk.png" alt="Aurora Desk preview" />
           <h3>Aurora Desk</h3>
           <p>A fuller editorial/news product structure with category navigation, newsletter module, story hierarchy, and richer content framing.</p>
@@ -804,20 +792,20 @@ python3 skills/ui-craft-pro/scripts/search.py \
       </div>
     </div>
   </footer>
+
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
-    const body = document.body;
     const nav = document.getElementById('site-nav');
     const navLinks = nav ? nav.querySelectorAll('a') : [];
 
     function closeMenu() {
-      body.classList.remove('menu-open');
+      document.body.classList.remove('menu-open');
       if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
     }
 
     if (menuToggle) {
       menuToggle.addEventListener('click', () => {
-        const open = body.classList.toggle('menu-open');
+        const open = document.body.classList.toggle('menu-open');
         menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
     }
@@ -832,8 +820,5 @@ python3 skills/ui-craft-pro/scripts/search.py \
       if (window.innerWidth > 768) closeMenu();
     });
   </script>
-</body>
-</html>
-
 </body>
 </html>
