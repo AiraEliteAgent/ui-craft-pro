@@ -4,6 +4,25 @@ All notable changes to `ui-craft-pro` are documented here.
 
 ---
 
+## 0.1.9 — 2026-03-22
+
+README documentation architecture upgrade.
+
+### Added
+- `Why not generic AI UI?` comparison table near the top of the README
+- `Get started in 60 seconds` section for faster first-run onboarding
+- `Setup by use case` with collapsible sections for landing pages, dashboards, docs, AI answer UI, and onboarding/settings flows
+- `3 things you actually need` section to reduce perceived complexity for new users
+
+### Changed
+- strengthened the README information architecture to feel more like product documentation than a polished note dump
+- expanded quick usage and differentiator sections so the repo explains structure, reference borrowing, and anti-generic review more clearly
+
+### Notes
+- This release is focused on making the README easier to scan, trust, and adopt quickly.
+
+---
+
 ## 0.1.8 — 2026-03-22
 
 README hero/positioning upgrade + live demo integration.

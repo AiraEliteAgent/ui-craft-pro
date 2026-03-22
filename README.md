@@ -116,6 +116,20 @@ That is why the workflow matters more than the raw assets.
 
 ---
 
+## 3 things you actually need
+
+Once the repo is installed, most of the time you only need these three entry points:
+
+| Tool / Layer | What it does |
+|-------------|--------------|
+| **`search.py --design-system`** | Generates a first-pass direction with product fit, style direction, palette, type, and anti-patterns |
+| **`style_signature.py`** | Turns “make it feel more GitHub-like / Vercel-like / Perplexity-like” into a compact style-cloning brief |
+| **`anti-generic-ui` + review references** | Catches fake premium, weak hierarchy, bento noise, surface-only copying, and final drift |
+
+Everything else helps you go deeper — but these three are the shortest path from vague UI ask → usable result.
+
+---
+
 ## What this project contains
 
 ### Core skill
@@ -213,6 +227,23 @@ python3 skills/ui-craft-pro/scripts/search.py "gaming landing page bold neon com
 
 ```bash
 python3 skills/ui-craft-pro/scripts/search.py "fintech dashboard minimal premium trustworthy" --design-system -p "VaultFlow"
+```
+
+### Extract a style signature
+
+```bash
+python3 skills/ui-craft-pro/scripts/style_signature.py "developer docs premium monochrome"
+python3 skills/ui-craft-pro/scripts/style_signature.py "commerce admin friendly operational"
+python3 skills/ui-craft-pro/scripts/style_signature.py "ai search knowledge calm minimal"
+```
+
+### Search the taste-building layers directly
+
+```bash
+python3 skills/ui-craft-pro/scripts/search.py "github-like developer docs" --domain style-signatures
+python3 skills/ui-craft-pro/scripts/search.py "enterprise workflow collaboration" --domain design-systems
+python3 skills/ui-craft-pro/scripts/search.py "ai answer prompt sources" --domain patterns-shells
+python3 skills/ui-craft-pro/scripts/search.py "too many gradients fake premium" --domain anti-generic-ui
 ```
 
 ### Narrow the search when the first result is wrong
@@ -386,6 +417,51 @@ python3 ~/.npm-global/lib/node_modules/openclaw/skills/skill-creator/scripts/pac
 
 Near-term improvements that matter most:
 - stronger product-archetype correction for calm / reflective / trust-heavy products
+- better first-pass design-system matching for less generic output
+- stronger OpenClaw-first install and usage guidance
+- continued iteration from real production tasks instead of theory-only expansion
+
+---
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
+
+---
+
+## Credits
+
+This project is an OpenClaw-oriented adaptation inspired by the ideas and structure of:
+- **UI UX Pro Max Skill** by Next Level Builder
+- Source project: <https://github.com/nextlevelbuilder/ui-ux-pro-max-skill>
+
+This repository is **not** a mirror of the original project.
+It is a focused adaptation shaped around:
+- OpenClaw usage
+- agent workflow
+- design-to-implementation discipline
+- post-build review behavior
+- practical correction of emotionally wrong first-pass output
+
+---
+
+## Thanks
+
+Special thanks to the original project for the inspiration and the initial data/search structure that made this adaptation possible.
+e
+- post-build review behavior
+- practical correction of emotionally wrong first-pass output
+
+---
+
+## Thanks
+
+Special thanks to the original project for the inspiration and the initial data/search structure that made this adaptation possible.
+e original project for the inspiration and the initial data/search structure that made this adaptation possible.
+at made this adaptation possible.
+ that made this adaptation possible.
+at made this adaptation possible.
+e correction for calm / reflective / trust-heavy products
 - better first-pass design-system matching for less generic output
 - stronger OpenClaw-first install and usage guidance
 - continued iteration from real production tasks instead of theory-only expansion
