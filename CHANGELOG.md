@@ -4,6 +4,24 @@ All notable changes to `ui-craft-pro` are documented here.
 
 ---
 
+## 0.2.1 — 2026-03-22
+
+README maturity pass.
+
+### Added
+- reference-family chooser table to help users pick the right inspiration family faster
+- common-mistakes section for anti-generic and anti-drift guidance
+- FAQ section to reduce friction around workflow depth, style signatures, and reference borrowing
+
+### Changed
+- improved README flow so it reads more like mature product documentation and less like a static showcase page
+- reinforced the project’s positioning around structure, fit, and safer style borrowing
+
+### Notes
+- This release is focused on making the repository easier to evaluate, trust, and actually use.
+
+---
+
 ## 0.2.0 — 2026-03-22
 
 README productization upgrade.

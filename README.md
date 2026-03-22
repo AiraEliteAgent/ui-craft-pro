@@ -294,6 +294,49 @@ The goal is to catch fake premium, weak hierarchy, inconsistent component family
 
 ---
 
+## Common mistakes this helps prevent
+
+- using black backgrounds, blur, and gradients as a shortcut for “premium”
+- borrowing the visual surface of a product without its spacing and component logic
+- making every section and card equally loud
+- treating docs, dashboards, onboarding, and AI answer products like the same page type
+- shipping the first plausible design-system output without checking emotional fit
+- polishing visuals before deciding structure and workflow intent
+
+---
+
+## FAQ
+
+<details>
+<summary><b>Do I need the full workflow for every task?</b></summary>
+
+No. For small tweaks, just use the relevant layer and ship. The full flow matters most when the page needs a stronger product direction, reference borrowing, or anti-generic cleanup.
+
+</details>
+
+<details>
+<summary><b>When should I use <code>style_signature.py</code> instead of <code>search.py --design-system</code>?</b></summary>
+
+Use `search.py --design-system` when the product direction is still broad or unclear. Use `style_signature.py` when the user is really saying “make it feel more like GitHub / Vercel / Perplexity / Shopify / Linear”.
+
+</details>
+
+<details>
+<summary><b>Is this meant to copy other products?</b></summary>
+
+No. The goal is to extract spacing, hierarchy, shell logic, and component behavior — then rebuild with your own brand, copy, and product reality.
+
+</details>
+
+<details>
+<summary><b>What if the first result looks good but still feels off?</b></summary>
+
+That usually means the emotional fit is wrong, not that the whole process failed. Narrow the search, choose a better reference family, and run the anti-generic review before shipping.
+
+</details>
+
+---
+
 ## Reference files
 
 ### Implementation mapping
